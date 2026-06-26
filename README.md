@@ -98,7 +98,7 @@ Deployed Application (optional): N/A (run locally — see `student-store-api/REA
 
 ### Walkthrough Video
 
-[![Watch the walkthrough](https://cdn.loom.com/sessions/thumbnails/2307b51637494fca83e1bc45e21a896b-with-play.gif)](https://www.loom.com/share/2307b51637494fca83e1bc45e21a896b)
+[![Watch the walkthrough](https://cdn.loom.com/sessions/thumbnails/2307b51637494fca83e1bc45e21a896b-9676267c2e09f404.gif)](https://www.loom.com/share/2307b51637494fca83e1bc45e21a896b)
 
 > ▶️ Click the thumbnail above to watch the full walkthrough on Loom.
 
