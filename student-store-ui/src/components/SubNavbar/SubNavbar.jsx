@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./SubNavbar.css"
 
 function SubNavbar({ activeCategory, setActiveCategory, searchInputValue, handleOnSearchInputChange }) {
@@ -21,6 +22,9 @@ function SubNavbar({ activeCategory, setActiveCategory, searchInputValue, handle
             />
             <i className="material-icons">search</i>
           </div>
+          <Link className="orders-link" to="/orders">
+            Past Orders
+          </Link>
         </div>
 
         <div className="row">

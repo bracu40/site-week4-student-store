@@ -1,0 +1,90 @@
+.OrderDetail {
+  padding: 2rem;
+}
+
+.OrderDetail .content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.OrderDetail .back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #2f80ed;
+  text-decoration: none;
+}
+
+.OrderDetail h1 {
+  margin-bottom: 1rem;
+}
+
+.OrderDetail .meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 2rem;
+  background: white;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.OrderDetail .meta .label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 0.03em;
+}
+
+.OrderDetail .status {
+  text-transform: capitalize;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.OrderDetail .status-completed {
+  background: #e3f9e5;
+  color: #1b873f;
+}
+
+.OrderDetail .status-pending {
+  background: #fff4e0;
+  color: #b25e09;
+}
+
+.OrderDetail .items-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.OrderDetail .items-table th,
+.OrderDetail .items-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.OrderDetail .items-table th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+.OrderDetail .total-label {
+  text-align: right;
+  font-weight: 600;
+}
+
+.OrderDetail .total-value {
+  font-weight: 700;
+}
+
+.OrderDetail .error {
+  color: #c0392b;
+  margin-bottom: 1rem;
+}

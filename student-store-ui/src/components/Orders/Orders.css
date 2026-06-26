@@ -1,0 +1,96 @@
+.Orders {
+  padding: 2rem;
+}
+
+.Orders .content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.Orders h1 {
+  margin-bottom: 1.5rem;
+}
+
+.Orders .filter {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.Orders .filter input {
+  flex: 1;
+  max-width: 320px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.Orders .filter button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #2f80ed;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.Orders .filter button.clear {
+  background: #888;
+}
+
+.Orders .orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Orders .orders-table th,
+.Orders .orders-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.Orders .orders-table th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+.Orders .orders-table a {
+  color: #2f80ed;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.Orders .status {
+  text-transform: capitalize;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.Orders .status-completed {
+  background: #e3f9e5;
+  color: #1b873f;
+}
+
+.Orders .status-pending {
+  background: #fff4e0;
+  color: #b25e09;
+}
+
+.Orders .empty,
+.Orders .error {
+  padding: 1rem;
+  color: #555;
+}
+
+.Orders .error {
+  color: #c0392b;
+}

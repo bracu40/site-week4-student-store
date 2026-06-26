@@ -47,6 +47,18 @@
   justify-content: center;
   align-items: center;
 }
+.SubNavbar .content .orders-link {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 8px;
+  background: var(--bright-green);
+  color: var(--pure-white);
+  font-weight: 600;
+  text-decoration: none;
+}
 .SubNavbar .content .links {
   display: flex;
   flex-direction: row;

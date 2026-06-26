@@ -1,9 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,4 +8,56 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Product — an item for sale in the student store.
+// See planning.md > Section 1 > Product.
+// ---------------------------------------------------------------------------
+model Product {
+  id          Int         @id @default(autoincrement())
+  name        String
+  description String?
+  price       Float
+  imageUrl    String?
+  category    String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  orderItems  OrderItem[] // back-relation: line items that reference this product
+}
+
+// ---------------------------------------------------------------------------
+// Order — a customer's purchase. Carries the customer info, a server-computed
+// total, and a status. Its line items live in OrderItem (added in Milestone 4).
+// See planning.md > Section 1 > Order.
+// ---------------------------------------------------------------------------
+model Order {
+  id         Int         @id @default(autoincrement())
+  customer   String
+  email      String
+  totalPrice Float       @default(0)
+  status     String      @default("pending")
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  orderItems OrderItem[] // the line items belonging to this order
+}
+
+// ---------------------------------------------------------------------------
+// OrderItem — one product line on one order. Sits at the intersection of Order
+// and Product. `price` is a snapshot of the product's unit price at the time of
+// purchase, so historical orders are unaffected by later price changes.
+//
+// Cascade rules (see planning.md > Section 1):
+//   - Deleting an Order  deletes its OrderItems   (onDelete: Cascade on `order`).
+//   - Deleting a Product deletes its OrderItems    (onDelete: Cascade on `product`).
+// ---------------------------------------------------------------------------
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  productId Int
+  quantity  Int     @default(1)
+  price     Float // unit price at time of purchase (snapshot, not a live ref)
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }

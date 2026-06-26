@@ -1,3 +1,10 @@
 node_modules
 # Keep environment variables out of version control
 .env
+
+# Local Postgres data cluster (created for development; not source)
+.pgdata
+*.log
+
+# Build output
+dist
